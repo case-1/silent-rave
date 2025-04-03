@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/maythisrave.png" alt="May This Rave Logo" width="260" />
+</p>
 
-## Getting Started
+# Silent Disco Rave — May This Rave Take Us to Space
 
-First, run the development server:
+Een mobiele webapplicatie voor het Oud & Nieuw feest in een penthouse in Breda. Bezoekers melden zich aan via een minimalistische en futuristische interface met AI-gegenereerde achtergrondvideo en muziek. De flow is ontworpen voor maximale impact op mobiele schermen, en minimale technische afleiding.
+
+---
+
+## Functionaliteit
+
+- Fullscreen videoachtergrond (MP4)
+- Achtergrondmuziek start na gebruikersinteractie
+- Glitch-, chroma- en neon-animaties met Tailwind en CSS
+- Flow-gebaseerde aanmelding: naam, aantal personen, optioneel contact
+- Gegevensopslag via Azure Table Storage
+- Mobiel geoptimaliseerd (9:16 aspect-ratio)
+
+---
+
+## Technologie
+
+- Next.js 14 (App Router)
+- Tailwind CSS
+- Framer Motion
+- Azure Table Storage
+- Docker + Nginx Proxy Manager (deployment)
+- Video + audio hosting lokaal via public/
+
+---
+
+## Lokale installatie
 
 ```bash
+git clone https://github.com/case-1/silent-rave.git
+cd silent-rave/frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open de app op: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+De app wordt later uitgerold in Docker containers op een eigen VPS. Gebruik de bestaande Nginx Proxy Manager voor domeinrouting.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Bestandstructuur (frontend)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+/frontend
+├── app/
+├── public/
+│   ├── maythisrave.png
+│   ├── movie1.mp4
+│   └── audio.mp3
+├── styles/
+├── globals.css
+├── tailwind.config.js
+└── README.md
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Opmerking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deze app vereist geen authenticatie of toegangsbewijzen. Het doel is eenvoud, snelheid en beleving — helemaal in stijl met het event.
